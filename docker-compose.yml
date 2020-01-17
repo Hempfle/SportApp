@@ -21,6 +21,8 @@ services:
       - ./server:/usr/src/app
     links:
       - mongo
+    depends_on:
+      - mongo
 
   mongo:
     container_name: mongo
