@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const exerciseSchema = new mongoose.Schema({
     name: String,
-    r_id: Number,
+    r_id: String,
     repetitions: Number,
     sets: Number,
     muscle: String,

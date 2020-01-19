@@ -14,8 +14,8 @@ router.get("/", async (request, response) => {
 
 router.get("/:id", async (request, response) => {
     try {
-        let exercise = await Routine.findById(request.params.id).exec();
-        response.send(exercise);
+        let routine = await Routine.findById(request.params.id).exec();
+        response.send(routine);
     } catch (error) {
         response.status(500).send(error);
     }
@@ -24,8 +24,8 @@ router.get("/:id", async (request, response) => {
 
 router.post("/", async (request, response) => {
     try {
-        let exercise = new Routine(request.body);
-        let result = await exercise.save();
+        let routine = new Routine(request.body);
+        let result = await routine.save();
         response.send(result);
     } catch (error) {
         response.status(500).send(error);
@@ -35,9 +35,9 @@ router.post("/", async (request, response) => {
 
 router.put("/:id", async (request, response) => {
     try {
-        let exercise = await Routine.findById(request.params.id).exec();
-        exercise.set(request.body);
-        let result = await exercise.save();
+        let routine = await Routine.findById(request.params.id).exec();
+        routine.set(request.body);
+        let result = await routine.save();
         response.send(result);
     } catch (error) {
         response.status(500).send(error);
