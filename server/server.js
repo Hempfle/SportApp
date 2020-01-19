@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const exerciseRouter = require('./routes/exerciseRouter');
+const routineRouter = require('./routes/routineRouter');
+const planRouter = require('./routes/planRouter');
 
 const app = express();
 const server = require('http').Server(app);
@@ -19,6 +21,8 @@ app.options('*', function(req, res) {
 
 //routes
 app.use('/exercise', exerciseRouter);
+app.use('/routine', routineRouter);
+app.use('/plan', planRouter);
 
 
 server.listen(port, (err) => {
