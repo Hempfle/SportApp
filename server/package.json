@@ -15,5 +15,8 @@
     "helmet": "^3.21.2",
     "mongodb": "^3.5.0",
     "mongoose": "^5.8.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
